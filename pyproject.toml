@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "effectiveacademybackend"
+version = "0.1.0"
+description = "CoffeeShop API"
+authors = ["Nikolay Koren <nikolai.koren2004@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.2"
+djangorestframework = "^3.15.2"
+black = "^24.10.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
