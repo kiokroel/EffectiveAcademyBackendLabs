@@ -3,7 +3,6 @@ import uuid
 
 import django.db.models.deletion
 import django.db.models.functions.text
-
 from django.db import migrations, models
 
 

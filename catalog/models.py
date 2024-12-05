@@ -1,14 +1,13 @@
 import uuid  # Required for unique book instances
 from datetime import date
 
+from django.conf import settings  # Required to assign User as a borrower
 from django.db import models
-
-# Create your models here.
-from django.urls import reverse  # To generate URLS by reversing URL patterns
 from django.db.models import UniqueConstraint
 from django.db.models.functions import Lower
 
-from django.conf import settings  # Required to assign User as a borrower
+# Create your models here.
+from django.urls import reverse  # To generate URLS by reversing URL patterns
 
 
 class Genre(models.Model):
@@ -74,8 +73,10 @@ class Book(models.Model):
 
     title = models.CharField(max_length=200)
     author = models.ForeignKey("Author", on_delete=models.RESTRICT, null=True)
-    # Foreign Key used because book can only have one author, but authors can have multiple books.
-    # Author as a string rather than object because it hasn't been declared yet in file.
+    # Foreign Key used because book can only have one author, but authors
+    # can have multiple books.
+    # Author as a string rather than object because it hasn't been declared
+    # yet in file.
     summary = models.TextField(
         max_length=1000, help_text="Enter a brief description of the book"
     )

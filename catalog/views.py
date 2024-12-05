@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 
 # Create your views here.
-
-from .models import Book, Author, BookInstance
+from .models import Author, Book, BookInstance
 
 
 def index(request):
