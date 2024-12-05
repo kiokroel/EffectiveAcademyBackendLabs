@@ -22,7 +22,9 @@ class Migration(migrations.Migration):
             name="bookinstance",
             options={
                 "ordering": ["due_back"],
-                "permissions": (("can_mark_returned", "Set book as returned"),),
+                "permissions": (
+                    ("can_mark_returned", "Set book as returned"),
+                ),
             },
         ),
         migrations.AddField(
@@ -71,7 +73,8 @@ class Migration(migrations.Migration):
                 (
                     "name",
                     models.CharField(
-                        help_text="Enter the book's natural language (e.g. English, French, Japanese etc.)",
+                        help_text="Enter the book's natural language "
+                        "(e.g. English, French, Japanese etc.)",
                         max_length=200,
                         unique=True,
                     ),
@@ -82,7 +85,8 @@ class Migration(migrations.Migration):
                     models.UniqueConstraint(
                         django.db.models.functions.text.Lower("name"),
                         name="language_name_case_insensitive_unique",
-                        violation_error_message="Language already exists (case insensitive match)",
+                        violation_error_message="Language already exists "
+                        "(case insensitive match)",
                     )
                 ],
             },
