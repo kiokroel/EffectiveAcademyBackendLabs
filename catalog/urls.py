@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import path, re_path
 
 from . import views
 
@@ -28,8 +28,22 @@ urlpatterns += [
 
 urlpatterns += [
     re_path(
-        "book/<uuid:pk>/renew/",
+        r"^book/(?P<pk>[-\w]+)/renew/$",
         views.renew_book_librarian,
         name="renew-book-librarian",
+    ),
+]
+
+urlpatterns += [
+    path("author/create/", views.AuthorCreate.as_view(), name="author-create"),
+    path(
+        "author/<int:pk>/update/",
+        views.AuthorUpdate.as_view(),
+        name="author-update",
+    ),
+    path(
+        "author/<int:pk>/delete/",
+        views.AuthorDelete.as_view(),
+        name="author-delete",
     ),
 ]
