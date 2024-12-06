@@ -17,3 +17,19 @@ urlpatterns = [
         name="author-detail",
     ),
 ]
+
+urlpatterns += [
+    re_path(
+        r"^mybooks/$",
+        views.LoanedBooksByUserListView.as_view(),
+        name="my-borrowed",
+    ),
+]
+
+urlpatterns += [
+    re_path(
+        "book/<uuid:pk>/renew/",
+        views.renew_book_librarian,
+        name="renew-book-librarian",
+    ),
+]

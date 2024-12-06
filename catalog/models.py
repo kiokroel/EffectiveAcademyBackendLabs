@@ -1,7 +1,7 @@
 import uuid  # Required for unique book instances
 from datetime import date
 
-from django.conf import settings  # Required to assign User as a borrower
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import UniqueConstraint
 from django.db.models.functions import Lower
@@ -130,10 +130,7 @@ class BookInstance(models.Model):
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
+        User, on_delete=models.SET_NULL, null=True, blank=True
     )
 
     @property
