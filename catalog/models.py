@@ -63,7 +63,7 @@ class Language(models.Model):
                 Lower("name"),
                 name="language_name_case_insensitive_unique",
                 violation_error_message="Language already exists "
-                                        "(case insensitive match)",
+                "(case insensitive match)",
             ),
         ]
 
@@ -85,7 +85,7 @@ class Book(models.Model):
         max_length=13,
         unique=True,
         help_text='13 Character <a href="https://www.isbn-international.org'
-                  '/content/what-isbn'
+        "/content/what-isbn"
         '">ISBN number</a>',
     )
     genre = models.ManyToManyField(
