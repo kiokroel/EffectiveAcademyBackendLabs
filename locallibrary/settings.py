@@ -150,3 +150,7 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+ALLOWED_HOSTS = ['effectiveacademybackendlabs-production.up.railway.app', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ['https://effectiveacademybackendlabs-production.up.railway.app']
