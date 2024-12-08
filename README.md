@@ -31,3 +31,7 @@
   ```
   poetry run python manage.py runserver
   ```
+  
+### Сайт выгружен на сервер с помощью сайта railway
+
+[Перейти](https://effectiveacademybackendlabs-production.up.railway.app/)
